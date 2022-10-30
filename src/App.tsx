@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AuthenticatedLayout from './routes/Layouts/AuthenticatedLayout';
+import MoviesPage from './routes/MoviesPage/MoviesPage';
+import BookmarksPage from './routes/BookmarksPage/BookmarksPage';
+import LoginPage from './routes/LoginPage/LoginPage';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+    <Route element={<AuthenticatedLayout />}>
+      <Route path="/" element={<MoviesPage />} />
+      <Route path="/bookmarks" element={<BookmarksPage />} />
+    </Route>
+    <Route path="/login" element={<LoginPage />} />
+  </Routes>
   );
 }
 
