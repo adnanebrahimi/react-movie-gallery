@@ -3,7 +3,7 @@ export default function Header(props: {
   setOpenSidebar: (openSidebar: boolean) => void;
 }) {
   return (
-    <header className="w-full flex h-12 bg-blue-200 justify-between">
+    <header className="w-full flex h-12 bg-blue-200 justify-between items-center px-3">
       <h3>Movie Gallery App</h3>
       <button
         onClick={() => {
