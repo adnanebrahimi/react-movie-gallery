@@ -18,6 +18,7 @@ function authReducer(state: User, action: Action) {
 
     case "logout": {
       localStorage.removeItem("username");
+
       return { username: "" };
     }
 
