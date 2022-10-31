@@ -28,7 +28,7 @@ function authReducer(state: User, action: Action) {
 }
 
 function AuthProvider({ children }: AuthProviderProps) {
-  const [state, dispatch] = React.useReducer(authReducer, { username: "" });
+  const [state, dispatch] = React.useReducer(authReducer, { username: localStorage.getItem('username') || '' });
   // NOTE: you *might* need to memoize this value
   // Learn more in http://kcd.im/optimize-context
   const value = { state, dispatch };

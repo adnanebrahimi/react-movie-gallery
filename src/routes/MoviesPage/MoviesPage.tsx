@@ -1,7 +1,9 @@
-import { useAuthContext } from "../../contexts";
+import { useAuthContext, useMovieContext } from "../../contexts";
 
 export default function MoviesPage() {
-   const authState = useAuthContext();
+   
+   const movieContext = useMovieContext();
+   movieContext.dispatch({'type':'load movies', 'payload':[]})
     return <>
     Movies PAGE
     </>;
